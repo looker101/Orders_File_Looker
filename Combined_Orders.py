@@ -44,6 +44,7 @@ def getFile():
     new_orders = apply_tags(new_orders)
     
     combined_orders = pd.concat([orders_status, new_orders], ignore_index=False)
+    combined_orders.sort_index(inplace = True)
     save_to_excel(combined_orders, "Order_Status_2024OK.xlsx")
 
 if __name__ == "__main__":
